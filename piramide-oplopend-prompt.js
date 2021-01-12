@@ -1,14 +1,25 @@
-var arrayNumber = prompt("Voer een getal in:");
+var number = document.getElementById('arrayNumber');
+var submitButton = document.getElementById("submit");
+var text = document.getElementById("text");
+var text2 = document.getElementById("text2");
+var PG = document.getElementById("h1");
+
+submitButton.onclick = arrayPiramide;
 
 function arrayPiramide() {
-  var totalRows = arrayNumber;
-  var arrayNumbers = ["",];
-  for (var i = 0; i <= totalRows; i++) {
+	arrayNumbers = [];
+  text.innerHTML = "";
+	text2.innerHTML = "";
+
+  for (var i = 0; i <= number.value; i++) {
       arrayNumbers.push(i);
-      document.write((arrayNumbers)+ "<br>");
-  }
-  document.querySelector(".p").innerHTML = "Array " + arrayNumbers;  
+      text2.innerHTML = "Array "  + arrayNumbers.join(", ");
+      text.innerHTML += arrayNumbers.join(" ") + "<br>";
+     }
+  
+  number.value = "";
+  arrayNumbers = [];  
 }
-arrayPiramide();
+
 
 
